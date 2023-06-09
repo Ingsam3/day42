@@ -2,20 +2,55 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>Ajax02</title>
+		<style type="text/css">
+			div{
+				width: 200px; height: 150px; margin: 5px; float: left;
+			}
+		</style>
 		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	</head>
 	<body>
 		<script type="text/javascript">
-			$(document).ready(function(){
-				$("").click(function(){
-					
-					
-				});
+			$(function(){
+				$("#menu01").click(function(){
+					$.ajax({
+						url : "menu.html" , //비동기식 Ajax로 불러올 파일 경로
+						dataType : "html", //받아오는 자료 형식
+						success :function(data){ //비동기식 Ajax로 받아오는 것을 성공하면 호출되는 콜백함수
+												//받아오는 자료는 data 매개변수에 저장된다
+							$("#result01").html(data);//result01 에 jQuery html()함수로 
+													 //받아온 결과를 태그와 문자를 함께 변경 적용 					
+						}
+						
+					}); //01 ajax end
+					return false;
+				});// menu01 click event end
 				
-			});
+				$("#menu02").click(function(){
+					$.ajax({
+						url : "menu.html" ,
+						dataType : "html",
+						success :function($data){ 			
+							$("#result02").html($($data).find("li"));									
+						}
+						
+					}); //02 ajax end
+					return false;
+				}); // menu02 click event end
+				
+			});//jquery end
 		
 		</script>
+		<div>
+			<a href="#" id="menu01">menu01</a><hr>
+			<span id="result01"></span>
+		</div>
+		<div>
+			<a href="#" id="menu02">menu02</a><hr>
+			<span id="result02"></span>
+		</div>
+	
 	
 	</body>
 </html>

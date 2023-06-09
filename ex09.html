@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>$.post()</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(function(){
+				$("#submit").click(function(){
+					$username= $(".name").val(); 
+					//name 클래스 선택자에 입력된 값을 좌측 jquery변수에 저장
+					$sendData = "name2="+$username;
+					//name2 파라미터 이름에 값을 달아서 전달
+					
+					$.post(
+							"result.jsp", //서버 파일 경로
+							$sendData, // 보낼자료
+							function(data){ 
+							//성공시, 비동기식으로 받아온 자료는 data 매개변수에 저장함
+							 $("#result").html(data);		
+							}
+							
+					);
+					
+				});
+				
+			});
+		</script>
+		<h3>$.post()</h3>
+		<form>
+			<label>이름입력 : </label>
+			<input type="text" class="name" size="14"><br>
+			<input type="button" id="submit" value="전송">
+		
+		</form>
+		<hr>
+		<div id="result">
+		<!-- ajax로 가져온 자료가 출력되는 부분 -->
+		</div>
+	</body>
+</html>
