@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4. width() method</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<style type="text/css">
+			div{
+				width: 70px; height: 50px; float:left; 
+				/* float:left ->복수의 수직정렬 레이아웃을 수평정렬로 배치  */
+				margin: 5px; background: red;
+			}
+			.next {
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$modWidth =50;
+				// $modWidth에 너비 저장
+				$("div").click(function(){
+					$("#this").width($modWidth).addClass("next");
+					//methodChainning 
+					//width() 함수로 너비를 변경 적용
+					$modWidth -= 8; //클릭할 때마다 너비 8씩 감소
+					
+				});
+				
+			});
+			
+		</script>
+		
+	</body>
+</html>

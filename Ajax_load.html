@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajax_load()</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<style type="text/css">
+			div{
+				width: 180px; height: 80px; 
+				margin: 3px; float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(function(){
+				$("#menu01").click(function(){
+					$("#re01").load("ex05.html");
+					//해당 아이디 역역에 비동기식 ajax 함수 load()로 ex05 파일을 로드해서 읽어온다 
+					return false; 
+					
+				});
+				$("#menu02").click(function(){
+					$("#re02").load("ex05.html li");
+					//비동기식으로 ex05.html에서	li 목록만 가져온다		
+					return false;
+				});
+			});
+			
+		</script>
+		<div>
+			<a href="#" id="menu01">메뉴보기01</a><br>
+			<span id="re01"></span>
+			<!-- 비동기식으로 읽어온 ex05.html파일 내용이 출력 -->
+		</div>
+		<div>
+			<a href="#" id="menu02">중식메뉴보기02</a><br>
+			<span id="re02"></span>
+			
+		</div>
+		
+		
+		
+	</body>
+</html>

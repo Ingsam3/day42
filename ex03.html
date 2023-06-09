@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3. addClss() method</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<script src="../js/jqery.js"></script>
+		<style type="text/css">
+			.warn{
+				background-color: orange; 
+				border:3px solid red; 
+			}
+		
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btn01").click(function(){
+					$("#div01").addClass("warn");
+					//warn 클래스 선택자로 지정된 css를 한번에 div01 영역에 적용
+					//미리 지정된 warn css설정을 div01 영역에 한번에 적용하는 것
+					
+				});
+				
+			});
+		
+		</script>
+		<div id="div01">
+			<p>예제 단락</p>
+		</div>
+		<hr>
+		<button id="btn01">addClass()</button>
+	</body>
+</html>

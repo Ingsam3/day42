@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>1. remove() & empty() method</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<style type="text/css">
+			p{
+				background: yellow;
+			}
+			.container{
+				width: 200px; height: 100px;
+				border: 1px dotted red; 
+			}
+		
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+				$("#btn01").click(function(){
+					$(".container").remove();
+					//remove() : 선택된 요소와 자식요소까지 삭제
+				});
+				
+			});
+			
+			$(document).ready(function(){
+				$(".btn02").click(function(){
+					$(".container").empty();
+					//empty() - 선택된 요소의 자식 요소만 삭제한다	
+				});
+				
+			});
+		
+		</script>
+		
+		<input type="button" id="btn01" value="remove()">
+		<button class="btn02" >empty()</button>
+		<hr>
+		<div class="container">
+			<p>Hello</p>
+			<p>GoodBye</p>
+		</div>
+	
+	</body>
+</html>

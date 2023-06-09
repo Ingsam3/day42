@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2. CSS() method</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<style type="text/css">
+			div {
+				width: 60px; height: 60px; 
+				
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//배경색 속성값 반환
+				$("#btn01").click(function(){
+					var color=$("#div01").css("background"); 
+					//js 변수 , 배경색 속성값 반환
+						$("#result").text("background 속성값:" + color);
+						//result id 영역에 문자를 변경적용
+					
+				});
+				//배경색 변경
+				$("#btn02").click(function(){
+					var color=$("#div01").css("background","green"); 
+					//div01 배경색 변경
+						
+				});
+				
+			});
+		
+		</script>
+		<div id="div01" style="background-color: blue;"></div><br>
+		<button id="btn01">css 배경색 속성값 반환</button>
+		<button id="btn02">css 배경색 변경적용</button>
+		<p id="result">여기에 배경색 속성값 출력</p>
+		
+	</body>
+</html>
